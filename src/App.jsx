@@ -20,18 +20,31 @@ function App() {
       .then(data => setOrders(data));
   };
 
+  // const createOrder = () => {
+  //   fetch("https://order-management-system-production-301d.up.railway.app/api/orders", {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify(form)
+  //   })
+  //     .then(res => res.json())
+  //     .then(() => {
+  //       setTimeout(() => fetchOrders(), 500);
+  //       setForm({ customerName: "", product: "", quantity: "", price: "" });
+  //     });
+  // };
   const createOrder = () => {
-    fetch("https://order-management-system-production-301d.up.railway.app/api/orders", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form)
-    })
-      .then(res => res.json())
-      .then(() => {
-        setTimeout(() => fetchOrders(), 500);
-        setForm({ customerName: "", product: "", quantity: "", price: "" });
-      });
-  };
+  fetch("https://order-management-system-production-301d.up.railway.app/api/orders", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(form)
+  })
+    .then(res => res.json())
+    .then((newOrder) => {
+      // Add new order directly to state immediately!
+      setOrders(prev => [...prev, newOrder]);
+      setForm({ customerName: "", product: "", quantity: "", price: "" });
+    });
+};
 
   const deleteOrder = (id) => {
     fetch(`https://order-management-system-production-301d.up.railway.app/api/orders/${id}`, {
