@@ -27,7 +27,7 @@ function App() {
     })
       .then(res => res.json())
       .then(() => {
-        fetchOrders();
+        setTimeout(() => fetchOrders(),500);
         setForm({ customerName: "", product: "", quantity: "", price: "" });
       });
   };
