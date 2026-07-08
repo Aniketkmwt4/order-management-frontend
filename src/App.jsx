@@ -63,7 +63,11 @@ function App() {
 
   return (
     <div className="container">
-      <h1>🛒 Order Management System</h1>
+      {/* Header */}
+      <div className="header">
+        <h1>🛒 Order Management System</h1>
+        <p className="subtitle">Manage your orders efficiently</p>
+      </div>
 
       {/* Create Order Form */}
       <div className="form-section">
@@ -110,22 +114,22 @@ function App() {
               <p>📦 Product: <strong>{order.product}</strong></p>
               <p>🔢 Quantity: <strong>{order.quantity}</strong></p>
               <p>💰 Price: <strong>₹{order.price}</strong></p>
-              <p>📌 Status: 
+              <p>📌 Status:
                 <span className={`status ${order.status?.toLowerCase()}`}>
                   {order.status}
                 </span>
               </p>
             </div>
             <div className="order-actions">
-              <button className="confirm-btn" 
+              <button className="confirm-btn"
                 onClick={() => updateStatus(order.id, "CONFIRMED")}>
                 ✅ Confirm
               </button>
-              <button className="cancel-btn" 
+              <button className="cancel-btn"
                 onClick={() => updateStatus(order.id, "CANCELLED")}>
                 ❌ Cancel
               </button>
-              <button className="delete-btn" 
+              <button className="delete-btn"
                 onClick={() => deleteOrder(order.id)}>
                 🗑️ Delete
               </button>
@@ -133,6 +137,27 @@ function App() {
           </div>
         ))
       )}
+
+      {/* Footer */}
+      <div className="footer">
+        <p>Built with ❤️ by <strong>Aniket</strong></p>
+        <p className="footer-tech">
+          React.js • Spring Boot • MySQL • Apache Kafka
+        </p>
+        <div className="footer-links">
+          <a href="https://github.com/Aniketkmwt4" target="_blank">
+            GitHub
+          </a>
+          <span>•</span>
+          <a href="https://github.com/Aniketkmwt4/order-management-system" target="_blank">
+            Backend Repo
+          </a>
+          <span>•</span>
+          <a href="https://github.com/Aniketkmwt4/order-management-frontend" target="_blank">
+            Frontend Repo
+          </a>
+        </div>
+      </div>
     </div>
   );
 }

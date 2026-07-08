@@ -150,3 +150,70 @@ button:hover {
   background: white;
   border-radius: 12px;
 }
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 30px;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border-radius: 12px;
+  color: white;
+}
+
+.header h1 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #aaa;
+  font-size: 16px;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 50px;
+  padding: 25px;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border-radius: 12px;
+  color: white;
+}
+
+.footer p {
+  color: #ccc;
+  margin: 5px 0;
+}
+
+.footer strong {
+  color: #4CAF50;
+  font-size: 16px;
+}
+
+.footer-tech {
+  color: #888 !important;
+  font-size: 13px !important;
+  margin-top: 8px !important;
+}
+
+.footer-links {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+
+.footer-links a {
+  color: #4CAF50;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+.footer-links span {
+  color: #555;
+}
