@@ -14,13 +14,13 @@ function App() {
   }, []);
 
   const fetchOrders = () => {
-    fetch("http://localhost:8080/api/orders")
+    fetch("https://order-management-system-production-301d.up.railway.app/api/orders")
       .then(res => res.json())
       .then(data => setOrders(data));
   };
 
   const createOrder = () => {
-    fetch("http://localhost:8080/api/orders", {
+    fetch("https://order-management-system-production-301d.up.railway.app/api/orders", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form)
@@ -33,14 +33,14 @@ function App() {
   };
 
   const deleteOrder = (id) => {
-  fetch(`http://localhost:8080/api/orders/${id}`, {
+  fetch(`https://order-management-system-production-301d.up.railway.app/api/orders/${id}`, {
     method: "DELETE"
   })
     .then(() => fetchOrders());
 };
 
 const updateStatus = (id, status) => {
-  fetch(`http://localhost:8080/api/orders/${id}/status?status=${status}`, {
+  fetch(`https://order-management-system-production-301d.up.railway.app/api/orders/${id}/status?status=${status}`, {
     method: "PUT"
   })
     .then(res => res.json())
