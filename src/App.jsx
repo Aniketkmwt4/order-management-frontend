@@ -32,17 +32,16 @@ function App() {
   //       setForm({ customerName: "", product: "", quantity: "", price: "" });
   //     });
   // };
-  const createOrder = () => {
+ const createOrder = () => {
   fetch("https://order-management-system-production-301d.up.railway.app/api/orders", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(form)
   })
     .then(res => res.json())
-    .then((newOrder) => {
-       console.log("New order response:", newOrder); // ← add this
-      // Add new order directly to state immediately!
-      setOrders(prev => [...prev, newOrder]);
+    .then(() => {
+      // Just fetch all orders again
+      fetchOrders();
       setForm({ customerName: "", product: "", quantity: "", price: "" });
     });
 };
