@@ -40,6 +40,7 @@ function App() {
   })
     .then(res => res.json())
     .then((newOrder) => {
+       console.log("New order response:", newOrder); // ← add this
       // Add new order directly to state immediately!
       setOrders(prev => [...prev, newOrder]);
       setForm({ customerName: "", product: "", quantity: "", price: "" });
