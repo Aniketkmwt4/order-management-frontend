@@ -33,6 +33,11 @@ function App() {
   //     });
   // };
  const createOrder = () => {
+  if(!form.customerName || !form.product || 
+     !form.quantity || !form.price) {
+    alert("Please fill all fields!");
+    return;
+  }
   fetch("https://order-management-system-production-301d.up.railway.app/api/orders", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
